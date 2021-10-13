@@ -32,12 +32,16 @@
 
  */
 
+
+String main2(){
+
+}
+
 void main() {
-  String userName;
+  main2();
+  main3();
 }
 
-void greeting(String name) {
-  print('Welcome to the world of functions, $name!');
+void main3(){
+
 }
-
-
