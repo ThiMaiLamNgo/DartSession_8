@@ -12,12 +12,15 @@
 
  */
 
-void main() {
-
+ void main() {
+  String name = getName();
+  printString('Hello $name');
 }
 
 // Your method printString, here
-
+void printString(String printThis){
+  print(printThis);
+}
 
 
 
