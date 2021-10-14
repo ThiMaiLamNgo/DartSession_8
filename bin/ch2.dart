@@ -12,9 +12,9 @@
 
  */
 
- void main() {
-  String name = getName();
-  printString('Hello $name');
+void main() {
+   printString("Hello");
+   printString ("Have a good day!");
 }
 
 // Your method printString, here
