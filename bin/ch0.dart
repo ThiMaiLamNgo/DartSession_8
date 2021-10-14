@@ -33,15 +33,13 @@
  */
 
 
-String main2(){
-
-}
-
 void main() {
-  main2();
-  main3();
+  print("Enter your name: ");
+  String userName = stdin.readLineSyn();
+  greeting(userName);
 }
 
-void main3(){
-
+// Your method printString, here
+void greeting(String name){
+  printString('Hello $name');
 }
