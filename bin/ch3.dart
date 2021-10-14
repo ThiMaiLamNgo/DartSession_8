@@ -17,16 +17,19 @@
  */
 
 void main() {
+  String name = getName();
+  print("Hello $name");
+  }
 
+// Create getName here
+String getName(){
+  print("What is your name?");
+  String userName = stdin.readLineSync();
+  return userName;
 }
 
-// Create getName here
-
-
-// Create getName here
-
 // Paste printString() here
-
-
-// Paste printString() here
-
+ String printString( String printThis){
+  print(printThis);
+  return  stdin.readLineSync();
+}
