@@ -31,3 +31,6 @@ void main() {
   bool output = getYesNo('Are whales mammals?');
   print('Are whales mammals? : Answer $output');
 }
+/*
+
+*/
