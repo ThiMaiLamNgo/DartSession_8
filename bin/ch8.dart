@@ -10,8 +10,10 @@
  */
 
 
-String fastFood(){
-  String places = 'BurgerKing';
+import 'dart:io';
+
+List<String> fastFood(){
+  List<String> places = ['BurgerKing', 'KFC', 'MCDonald'];
   return places;
 }
 
