@@ -21,8 +21,25 @@
  */
 
 
-void main() {
+import 'dart:io';
 
+void main() {
+  String beverage = getString('What is your favourite beer?');
+  int count = getInt('How many per day?');
+  double percent = getDouble('How much %?');
+  print('You like to drink $count of $beverage which has $percent% alcohol');
+}
+
+double getDouble(String prompt){
+  return double.parse(getString(prompt));
+}
+int getInt(String prompt){
+  print(prompt);
+  return int.parse(stdin.readLineSync());
+}
+String getString(String prompt){
+  print(prompt);
+  return stdin.readLineSync();
 }
 
 // I'm getting lazy, so now you decide where to paste and create your functions! :)
