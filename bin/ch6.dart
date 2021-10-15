@@ -32,3 +32,26 @@ void main() {
   }
   print('User put in $userAns, bool is now $ans');
 }
+/*
+Using while loop to ask user until he enter yes or no:
+
+import 'dart:io';
+bool getYesNo(String prompt){
+  print(prompt);
+  bool ans;
+  while (ans == null){
+    String userAns = stdin.readLineSync();
+    print(prompt);
+    if (userAns.toLowerCase() == 'yes'){
+      ans = true;
+    } else if (userAns.toLowerCase() == 'no'){
+      ans = false;
+    }
+  }
+  return ans;
+}
+void main() {
+  bool output = getYesNo('Are whales mammals?');
+  print('Are whales mammals? : Answer $output');
+}
+*/
