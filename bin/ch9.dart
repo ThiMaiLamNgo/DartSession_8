@@ -15,12 +15,55 @@
  */
 
 
+import 'dart:io';
+
+int getInt(String prompt){
+  print(prompt);
+  return int.parse(stdin.readLineSync());
+}
+
+bool  getYesNo(String prompt){
+  print(prompt);
+  bool ans;
+  while (ans == null ){
+    String userAns = stdin.readLineSync();
+    print(prompt);
+    if (userAns.toLowerCase() == 'yes'){
+      ans = true;
+    } else if (userAns.toLowerCase() == 'no'){
+      ans = false;
+    }
+  }
+  return ans;
+}
 void main() {
   print('Hello human, I need some numbers.');
   bool continueRunning = true;
   List<int> myNumbers = [];
   while(continueRunning) {
-
+    int nextNumber = getInt('Enter next number? ');
+    myNumbers.add(nextNumber);
+    continueRunning = getYesNo('Continue?');
   }
   print('The numbers you gave me were: $myNumbers');
 }
+/*
+Hello human, I need some numbers.
+Enter next number?
+10
+Continue?
+d
+Continue?
+yes
+Continue?
+Enter next number?
+20
+Continue?
+
+Continue?
+
+Continue?
+no
+Continue?
+The numbers you gave me were: [10, 20]
+*/
