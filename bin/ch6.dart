@@ -23,11 +23,12 @@
 import 'dart:io';
 
 void main() {
-  String userAns = stdin.readLineSync();
+  String userAns = stdin.readLineSync().toLowerCase;
   bool ans;
-  // Your code here
-
-
-  // Your code here
+  if(userAns == 'yes'){
+    ans = true;
+  } else if(userAns == 'no'){
+    ans = false;
+  }
   print('User put in $userAns, bool is now $ans');
 }
