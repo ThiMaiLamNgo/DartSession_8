@@ -22,48 +22,50 @@ int getInt(String prompt){
   return int.parse(stdin.readLineSync());
 }
 
-bool  getYesNo(String prompt){
+String getString(String prompt){
   print(prompt);
+  return stdin.readLineSync();
+}
+
+
+bool  getYesNo(String prompt){
+  //print(prompt);
   bool ans;
   while (ans == null ){
-    String userAns = stdin.readLineSync();
-    print(prompt);
+    String userAns = getString(prompt);
     if (userAns.toLowerCase() == 'yes'){
       ans = true;
     } else if (userAns.toLowerCase() == 'no'){
       ans = false;
     }
+    return ans;
   }
-  return ans;
+}
+List<int> getIntList(String prompt){
+  print(prompt);
+  List<int> myNumbers = [];
+  while(!getYesNo('Stop?')) {
+    //int nextNumber = getInt('Enter next number? ');
+    myNumbers.add(getInt('Next number'));
+  }
+  return myNumbers;
 }
 void main() {
-  print('Hello human, I need some numbers.');
-  bool continueRunning = true;
-  List<int> myNumbers = [];
-  while(continueRunning) {
-    int nextNumber = getInt('Enter next number? ');
-    myNumbers.add(nextNumber);
-    continueRunning = getYesNo('Continue?');
-  }
-  print('The numbers you gave me were: $myNumbers');
+  List<int> yourListNumbers = getIntList('Give me some numbers! ');
+  print('After running your function I got $yourListNumbers');
 }
 /*
-Hello human, I need some numbers.
-Enter next number?
-10
-Continue?
-d
-Continue?
-yes
-Continue?
-Enter next number?
-20
-Continue?
 
-Continue?
-
-Continue?
+Give me some numbers! 
+Stop?
 no
-Continue?
-The numbers you gave me were: [10, 20]
+Next number
+10
+Stop?
+no
+Next number
+11
+Stop?
+yes
+After running your function I got [10, 11]
 */
